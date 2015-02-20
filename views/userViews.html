@@ -1,0 +1,23 @@
+<div>
+	<h3>   {{onlinePostes[whichItem].title}} </h3></a>
+        				<p ta-bind ng-model = "onlinePostes[whichItem].text"></p>
+        				<ul><p>{{onlinePostes[whichItem].user}}</p> <p>{{onlinePostes[whichItem].date}}</p></ul>
+
+                                        <h3 id = "showReviews"> Comments</h3>
+        				<div class="reviews" ng-repeat = "userReview in userReviews">
+        					<h5> {{userReview.title}} </h5>
+        					<p>{{userReview.text}}</p>
+        				<ul><p>{{userReview.user}}</p> <p>{{userReview.date}}</p></ul>
+        				</div>
+
+
+        			<div class="addComments">	
+
+                                <h3> leave comment</h3>	
+        				<input type="text" ng-model = "commentTitle" placeholder = "Title"> <br>
+					<textarea rows="4" cols = "100" ng-model = "commentText" id = "woo" placeholder = "Leave your comment here "></textarea>
+					<input type="text" ng-model = "commenterName" required placeholder = "User Name">
+					<button ng-click = "addComment()"> submit</button>
+					</div>
+
+</div>

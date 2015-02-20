@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app = "app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="author" href="humans.txt">
+        <link rel="stylesheet" type="text/css" href="css/blog.css">
+        <link rel="stylesheet" type="text/css" href="css/textStyling.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.2.3/rangy-core.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular-sanitize.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular.min.js'></script>
+    <body>
+        <div>
+        <div class="container">
+            <div class="open">
+               <h1> Welcome to my blog about the Houston Astros.</h1>
+               <h4> Let's go Astros</h4>
+            </div>
+
+            <a href="#/blogEntries">View Posts</a>
+            <a href="#/addPost"> Add Posts</a>           
+
+            <div ng-view> </div>
+        	
+        </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.js"></script>
+          <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+        <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
+        <script src = "js/apps.js"></script>
+        <script src="js/controllers/postCtrl.js"></script>
+        <script src="js/controllers/singleCtrl.js"></script>
+    </body>
+</html>

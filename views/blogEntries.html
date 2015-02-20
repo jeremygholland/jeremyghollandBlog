@@ -1,0 +1,12 @@
+<div class="row">
+        		<div>
+        			<div ng-repeat = "onlinePoste in onlinePostes">
+                           <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <h3>   {{onlinePoste.title}} </h3></a>
+        				<p ta-bind ng-model = "onlinePoste.text"></p>
+        				<ul><p>{{onlinePoste.user}}</p> <p>{{onlinePoste.date}}</p></ul>
+                    </div>
+
+        		</div>
+
+
+</div>
