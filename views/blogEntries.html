@@ -10,9 +10,7 @@
 	<div class="col-md-8">
         			<div ng-repeat = "onlinePoste in onlinePostes">
         				<div class = "viewArea">
-        				<div class="col-md-9 col-md-offset-4">
-                           <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <h3>   {{onlinePoste.title}} </h3></a>
-                           </div>
+                           <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <h3 class=" singleTitle">   {{onlinePoste.title}} </h3></a>
         				<p ta-bind ng-model = "onlinePoste.text" class = "textBox"> </p>
         				<ul><p>{{onlinePoste.user}}</p> <p>{{onlinePoste.date}}</p></ul>
                     </div>

@@ -13,10 +13,22 @@
             width:100%; 
             overflow: hidden;}
 
-.container-fluid {background-color: #B6B3A0;}
+.container-fluid {background-color:#F8F7F3;}
 .open {text-align: center;
-        margin-bottom: 100px ;}
+        margin-bottom: 100px;
+        border: 2px solid black;
+        border-radius: 30px}
 #stuff{margin-top: 20px}
-.sidePost{margin-top: 50px}
+.sidePost{margin-bottom: 10vh}
 #views{background-image: url("http://wallalay.com/wp-content/uploads/2014/09/Paper-Background-99.jpg")}
-#singleTitle{text-align: center}
+.singleTitle{text-align: center}
+.sideBar {background-color: #FFD500;
+        height:100vh;
+        border-radius: 20px;
+        text-align: center}
+
+.stuff{border-top: 1px solid black;
+        margin-bottom: 20px;
+    }
+.stuff1{border-top: 2px solid black;
+        margin-bottom:20px;}
