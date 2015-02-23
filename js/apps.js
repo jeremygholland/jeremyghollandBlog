@@ -4,7 +4,7 @@ var app = angular.module('app', ['firebase','textAngular', 'ngRoute']);
 app.config (function($routeProvider){
 	$routeProvider.when('/blogEntries', {
 		templateUrl: 'views/blogEntries.html',
-		controller: 'postCtrl'
+		controller: 'entriesCtrl'
 	});
 	$routeProvider.when('/userInfo/:itemId', {
 		templateUrl: 'views/userViews.html',

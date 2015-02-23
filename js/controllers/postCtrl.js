@@ -1,4 +1,3 @@
-
 	app.controller('postCtrl', function($scope, $routeParams, $firebase){
 		$scope.params = $routeParams;
 	var ref = new Firebase('https://jhollaapp.firebaseio.com/')
@@ -19,6 +18,7 @@
 		$scope.title = null;
 		alert('your post was succesful! click View Posts if you want to see it!');
 		SavePosts();
+//http://plnkr.co/edit/JycdVWv4yVgBdOtqg5aZ?p=preview
 	}
 	else{
 		alert("no. stop it.");

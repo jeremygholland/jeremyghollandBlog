@@ -16,17 +16,19 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular-sanitize.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular.min.js'></script>
     <body>
-        <div>
-        <div class="container">
+        <div class = "all">
+        <div class="container-fluid">
             <div class="open">
                <h1> Welcome to my blog about the Houston Astros.</h1>
                <h4> Let's go Astros</h4>
             </div>
-
-            <a href="#/blogEntries">View Posts</a>
-            <a href="#/addPost"> Add Posts</a>           
-
-            <div ng-view> </div>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+           <button> <a href="#/blogEntries">View Posts</a></button>
+            <button><a href="#/addPost"> Add Posts</a> </button>
+            </div>
+            </div>
+            <div ng-view id = "stuff"> </div>
         	
         </div>
         </div>
@@ -37,5 +39,6 @@
         <script src = "js/apps.js"></script>
         <script src="js/controllers/postCtrl.js"></script>
         <script src="js/controllers/singleCtrl.js"></script>
+        <script src = "js/controllers/entriesCtrl.js"></script>
     </body>
 </html>

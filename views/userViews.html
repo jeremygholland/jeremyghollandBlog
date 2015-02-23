@@ -1,5 +1,15 @@
-<div>
-	<h3>   {{onlinePostes[whichItem].title}} </h3></a>
+<div id = "views">
+        <div class="row">
+        <div class="col-md-2">
+                <div class="sideBar">
+                <div ng-repeat = "onlinePoste in onlinePostes">
+                        <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <p class = "sidePost">   {{onlinePoste.title}} </p></a>
+                           </div>
+                </div>
+                </div>
+
+        <div class="col-md-10">
+	<h3 id = "singleTitle">   {{onlinePostes[whichItem].title}} </h3></a>
         				<p ta-bind ng-model = "onlinePostes[whichItem].text"></p>
         				<ul><p>{{onlinePostes[whichItem].user}}</p> <p>{{onlinePostes[whichItem].date}}</p></ul>
 
@@ -10,7 +20,6 @@
         				<ul><p>{{userReview.user}}</p> <p>{{userReview.date}}</p></ul>
         				</div>
 
-
         			<div class="addComments">	
 
                                 <h3> leave comment</h3>	
@@ -19,5 +28,7 @@
 					<input type="text" ng-model = "commenterName" required placeholder = "User Name">
 					<button ng-click = "addComment()"> submit</button>
 					</div>
+                                        </div>
+                                        </div>
 
 </div>

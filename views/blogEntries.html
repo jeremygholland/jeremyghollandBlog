@@ -1,12 +1,25 @@
 <div class="row">
-        		<div>
+	<div class="col-md-2">
+		<div class="sideBar">
+		<div ng-repeat = "onlinePoste in onlinePostes">
+			<a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <p class = "sidePost">   {{onlinePoste.title}} </p></a>
+                           </div>
+		</div>
+		</div>
+
+	<div class="col-md-8">
         			<div ng-repeat = "onlinePoste in onlinePostes">
+        				<div class = "viewArea">
+        				<div class="col-md-9 col-md-offset-4">
                            <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <h3>   {{onlinePoste.title}} </h3></a>
-        				<p ta-bind ng-model = "onlinePoste.text"></p>
+                           </div>
+        				<p ta-bind ng-model = "onlinePoste.text" class = "textBox"> </p>
         				<ul><p>{{onlinePoste.user}}</p> <p>{{onlinePoste.date}}</p></ul>
                     </div>
 
         		</div>
 
-
 </div>
+</div>	
+
+

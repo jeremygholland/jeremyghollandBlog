@@ -1,15 +1,3 @@
-#textarea {
-    -moz-appearance: textfield-multiline;
-    -webkit-appearance: textarea;
-    border: 1px solid gray;
-    font: medium -moz-fixed;
-    font: -webkit-small-control;
-    height: 28px;
-    overflow: auto;
-    padding: 2px;
-    resize: both;
-    width: 400px;
-}
 
 .ta-editor {
     min-height: 300px;
@@ -18,4 +6,17 @@
     font-family: inherit;
     font-size: 100%;
     margin:20px 0;
+    background-image: ;
  }
+
+.viewArea{ height: 300px;
+            width:100%; 
+            overflow: hidden;}
+
+.container-fluid {background-color: #B6B3A0;}
+.open {text-align: center;
+        margin-bottom: 100px ;}
+#stuff{margin-top: 20px}
+.sidePost{margin-top: 50px}
+#views{background-image: url("http://wallalay.com/wp-content/uploads/2014/09/Paper-Background-99.jpg")}
+#singleTitle{text-align: center}
