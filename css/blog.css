@@ -8,16 +8,16 @@
     margin:20px 0;
  }
  #left {border: 2px solid black;
-                margin-top: 20vh;
+                margin-top: 20%;
                 width: 100%;
                 position:relative;
                 }
                  
-.directions{margin-left: 15vh}
+.directions{margin-left: 15%}
 .postsTotal, .singlePost{
             height:100vh;
             overflow:auto;
-            margin-bottom:1vh;
+            margin-bottom:1%;
             width: 120%;
             max-height: relative;
             background-color:#F47949;
@@ -32,17 +32,17 @@
 .viewArea{ height: 40vh;
             width:100%; 
             overflow: hidden;}
-.containerBtn{margin-bottom: 10vh}
+.containerBtn{margin-bottom: 10%}
 
 .open {text-align: center;
-        margin-bottom: 5vh;
-        border: 3px solid black;
-        margin-top: -15vh;
-        width: 75%;
+        margin-bottom: 5%;
+        border: 2px solid black;
+        margin-top: -15%;
+        width: 80%;
         height: 30vh;
         color: #F4793E;
         text-shadow: 3px 3px 3px black;
-        margin-left: 15%;
+        margin-left: 30vh;
         position: relative;
         background:url("http://scoretime-scoreboards.webstarts.com/uploads/pg/dome14.gif");
         background-size: 100% 100%;
@@ -52,16 +52,16 @@
     background-image:url("http://www.wallpaperhi.com/thumbnails/detail/20111201/astrorainbow.jpg");
     background-size: 100%}
 .view{border-radius: 20px;}
-#img{width: 10vh;
-    height: 10vh;
-    margin-left: 15vh;}
+#img{width: 10%;
+    height: 10%;
+    margin-left: 15%;}
 #stuff{margin-top: 20px}
 .sidePost{margin-bottom: 20%;
             font-size: 1em;
             color: #F4793E;
             text-shadow: 1px 1px 1px black;}
 .singleTitle{text-align: center;
-            margin-top:3vh;
+            margin-top:3%;
             color:#00275D;}
 .sideBar {background-color:#00275D ;
         max-height:fixed;
@@ -75,16 +75,17 @@
 .stuff1{border-top: 5px solid black;
         margin-bottom:20px;}
 button{border-radius: 20px;
-        background-color:#00275D;
+        background-color:#F4793E;
+        color:white;
         }
 button:hover{
-    background-color:#F4793E;
+    background-color:#00275D;
 }
 .userName{font-size: 1.3em;
     color:#F47949;
         font-style: bold;
         text-shadow: 3px 3px 3px #00275D;
-        margin-top: 5vh}
+        margin-top: 5%}
 
 textarea{width:100vh;}
 
