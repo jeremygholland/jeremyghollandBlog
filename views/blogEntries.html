@@ -11,7 +11,7 @@
 		<div class="postsTotal">
         			<div ng-repeat = "onlinePoste in onlinePostes">
         				<div class = "viewArea">
-                           <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}"> <h3 class=" singleTitle" ng-mouseover = "hover()" ng-mouseout = "hoverNo()">   {{onlinePoste.title}} </h3></a> <img src="http://content.sportslogos.net/logos/54/61/full/4aol8vndl5r2szhsibci.gif" ng-show= "hoverTrue" class = "img">
+                           <a href="#/userInfo/{{onlinePostes.indexOf(onlinePoste)}}" > <h3 class=" singleTitle">   {{onlinePoste.title}} </h3></a>
         				<p ta-bind ng-model = "onlinePoste.text" class = "textBox"> </p>
         				</div>
         				<ul><p class = "userName"> User: {{onlinePoste.user}}</p> <p>{{onlinePoste.date}}</p></ul>

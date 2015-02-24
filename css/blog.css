@@ -13,7 +13,7 @@
                 position:relative;
                 }
                  
-.directions{margin-left: 20vh}
+.directions{margin-left: 15vh}
 .postsTotal, .singlePost{
             height:100vh;
             overflow:auto;
@@ -52,13 +52,14 @@
     background-image:url("http://www.wallpaperhi.com/thumbnails/detail/20111201/astrorainbow.jpg");
     background-size: 100%}
 .view{border-radius: 20px;}
-.img{width: 80px;
-    height: 80px;}
+#img{width: 10vh;
+    height: 10vh;
+    margin-left: 15vh;}
 #stuff{margin-top: 20px}
 .sidePost{margin-bottom: 20%;
             font-size: 1em;
             color: #F4793E;
-            text-shadow: 8px 8px 8px white;}
+            text-shadow: 1px 1px 1px black;}
 .singleTitle{text-align: center;
             margin-top:3vh;
             color:#00275D;}
@@ -73,10 +74,16 @@
     }
 .stuff1{border-top: 5px solid black;
         margin-bottom:20px;}
-button{border-radius: 20px;}
+button{border-radius: 20px;
+        background-color:#00275D;
+        }
+button:hover{
+    background-color:#F4793E;
+}
 .userName{font-size: 1.3em;
+    color:#F47949;
         font-style: bold;
-        text-shadow: 5px white;
+        text-shadow: 3px 3px 3px #00275D;
         margin-top: 5vh}
 
 textarea{width:100vh;}

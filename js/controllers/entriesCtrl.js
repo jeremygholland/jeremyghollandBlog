@@ -6,10 +6,10 @@ app.controller('entriesCtrl', function($scope, $routeParams, $firebase){
 	
 	$scope.onlinePostes = sync.$asArray();
 	$scope.numLimit = 500;
-	$scope.hover= function(){
+	$scope.hover= function(onlinePoste){
 		$scope.hoverTrue = true;
 	}
-	$scope.hoverNo = function(){
+	$scope.hoverNo = function(onlinePoste){
 		$scope.hoverTrue = false;
 	}
 	$scope.hoverTrue= false;
