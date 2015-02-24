@@ -10,9 +10,9 @@
 		$scope.onlinePostes.$save();
 	};
 	$scope.addPost = function(){
-		var d = new Date();	
+		$scope.d = new Date();	
 		if(($scope.user !=null) && ($scope.postText !=null) &&($scope.title !=null)){
-		$scope.onlinePostes.$add({title : $scope.title, user: $scope.user, text: $scope.postText, date: d});
+		$scope.onlinePostes.$add({title : $scope.title, user: $scope.user, text: $scope.postText, date: $scope.d});
 		$scope.user = null;
 		$scope.postText = null;
 		$scope.title = null;

@@ -6,29 +6,78 @@
     font-family: inherit;
     font-size: 100%;
     margin:20px 0;
-    background-image: ;
  }
+ #left {border: 2px solid black;
+                margin-top: 20vh;
+                width: 100%;
+                position:relative;
+                }
+                 
+.directions{margin-left: 20vh}
+.postsTotal, .singlePost{
+            height:100vh;
+            overflow:auto;
+            margin-bottom:1vh;
+            width: 120%;
+            max-height: relative;
+            background-color:#F47949;
+            border-radius: 20px;
+            border-spacing: 10px 50px;
+            border:2px solid black;
+        color: #00275D;
+    font-size: 1.4em;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 2px white ;}
 
-.viewArea{ height: 300px;
+.viewArea{ height: 40vh;
             width:100%; 
             overflow: hidden;}
+.containerBtn{margin-bottom: 10vh}
 
-.container-fluid {background-color:#F8F7F3;}
 .open {text-align: center;
-        margin-bottom: 100px;
-        border: 2px solid black;
-        border-radius: 30px}
+        margin-bottom: 5vh;
+        border: 3px solid black;
+        margin-top: -15vh;
+        width: 75%;
+        height: 30vh;
+        color: #F4793E;
+        text-shadow: 3px 3px 3px black;
+        margin-left: 15%;
+        position: relative;
+        background:url("http://scoretime-scoreboards.webstarts.com/uploads/pg/dome14.gif");
+        background-size: 100% 100%;
+        border-radius: 45px;
+}
+.container{z-index:-1;
+    background-image:url("http://www.wallpaperhi.com/thumbnails/detail/20111201/astrorainbow.jpg");
+    background-size: 100%}
+.view{border-radius: 20px;}
+.img{width: 80px;
+    height: 80px;}
 #stuff{margin-top: 20px}
-.sidePost{margin-bottom: 10vh}
-#views{background-image: url("http://wallalay.com/wp-content/uploads/2014/09/Paper-Background-99.jpg")}
-.singleTitle{text-align: center}
-.sideBar {background-color: #FFD500;
-        height:100vh;
+.sidePost{margin-bottom: 20%;
+            font-size: 1em;
+            color: #F4793E;
+            text-shadow: 8px 8px 8px white;}
+.singleTitle{text-align: center;
+            margin-top:3vh;
+            color:#00275D;}
+.sideBar {background-color:#00275D ;
+        max-height:fixed;
+        min-height:100vh;
         border-radius: 20px;
-        text-align: center}
+        text-align: center;}
 
-.stuff{border-top: 1px solid black;
+.stuff{border-top: 3px dotted black;
         margin-bottom: 20px;
     }
-.stuff1{border-top: 2px solid black;
+.stuff1{border-top: 5px solid black;
         margin-bottom:20px;}
+button{border-radius: 20px;}
+.userName{font-size: 1.3em;
+        font-style: bold;
+        text-shadow: 5px white;
+        margin-top: 5vh}
+
+textarea{width:100vh;}
+

@@ -6,4 +6,11 @@ app.controller('entriesCtrl', function($scope, $routeParams, $firebase){
 	
 	$scope.onlinePostes = sync.$asArray();
 	$scope.numLimit = 500;
+	$scope.hover= function(){
+		$scope.hoverTrue = true;
+	}
+	$scope.hoverNo = function(){
+		$scope.hoverTrue = false;
+	}
+	$scope.hoverTrue= false;
 });

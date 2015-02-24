@@ -16,25 +16,29 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular-sanitize.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular.min.js'></script>
     <body>
-        <div class = "all">
-        <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="top">
+          <div id = "left"> </div>
             <div class="open">
                <h1> Welcome to my blog about the Houston Astros.</h1>
                <h4> Let's go Astros</h4>
             </div>
+
             <div class="row">
-                <div class="stuff"></div>
-                <div class="stuff1"></div>
-                <div class="col-md-2 col-md-offset-10">
+              <div class = "containerBtn">     
+            <div class="col-md-8 col-md-offset-4">
            <button> <a href="#/blogEntries">View Posts</a></button>
-            <button><a href="#/addPost"> Add Posts</a> </button>
+            <button class = "directions"><a href="#/addPost"> Add Posts</a> </button>
+            </div>
             </div>
             
             </div>
-
-            <div ng-view id = "stuff"> </div>
-        	
-        </div>
+              <div class="stuff"></div>
+                <div class="stuff1"></div>
+                </div>
+                           </div>
+        	<div ng-view class= "view"></div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.js"></script>
           <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
