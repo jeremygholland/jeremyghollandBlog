@@ -1,5 +1,5 @@
-app.controller('loginCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
-
+app.controller('loginCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin, $location){
+$location.path("/")
 
 	$scope.openPage = true;
 	$scope.signUp = false;

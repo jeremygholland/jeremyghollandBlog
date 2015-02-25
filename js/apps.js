@@ -6,6 +6,10 @@ app.config (function($routeProvider){
 		templateUrl: 'views/blogEntries.html',
 		controller: 'entriesCtrl'
 	});
+	$routeProvider.when('/', {
+		templateUrl:'views/login.html',
+		controller:'loginCtrl'
+	});
 	$routeProvider.when('/userInfo/:itemId', {
 		templateUrl: 'views/userViews.html',
 		controller: 'singleCtrl'
@@ -14,8 +18,8 @@ app.config (function($routeProvider){
 		templateUrl: 'views/addPost.html',
 		controller: 'postCtrl'
 	});
-	$routeProvider.when('/',{
-		controller: 'loginCtrl.js'
+	$routeProvider.otherwise({
+		redirectTo: '/'
 	});
 
 });
