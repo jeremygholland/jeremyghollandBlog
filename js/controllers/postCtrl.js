@@ -1,5 +1,7 @@
-	app.controller('postCtrl', function($scope, $routeParams, $firebase){
+	app.controller('postCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
 		$scope.params = $routeParams;
+		$scope.firstBtn = true;
+			$scope.secondBtn = true; 
 	var ref = new Firebase('https://jhollaapp.firebaseio.com/')
 	var sync = $firebase(ref.child("posts"));
 	
@@ -10,7 +12,7 @@
 		$scope.onlinePostes.$save();
 	};
 	$scope.addPost = function(){
-		$scope.d = new Date();	
+		$scope.d = Firebase.ServerValue.TIMESTAMP;	
 		if(($scope.user !=null) && ($scope.postText !=null) &&($scope.title !=null)){
 		$scope.onlinePostes.$add({title : $scope.title, user: $scope.user, text: $scope.postText, date: $scope.d});
 		$scope.user = null;
