@@ -1,5 +1,6 @@
 var app = angular.module('app', ['firebase','textAngular', 'ngRoute']);
 
+
 app.config (function($routeProvider){
 	$routeProvider.when('/blogEntries', {
 		templateUrl: 'views/blogEntries.html',
@@ -13,9 +14,8 @@ app.config (function($routeProvider){
 		templateUrl: 'views/addPost.html',
 		controller: 'postCtrl'
 	});
-	$routeProvider.when('/', {
-		templateUrl: 'views/login.html',
-		controller: 'loginCtrl'
+	$routeProvider.when('/',{
+		controller: 'loginCtrl.js'
 	});
 
 });

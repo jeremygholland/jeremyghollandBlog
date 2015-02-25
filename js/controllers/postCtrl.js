@@ -1,7 +1,6 @@
 	app.controller('postCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
 		$scope.params = $routeParams;
-		$scope.firstBtn = true;
-			$scope.secondBtn = true; 
+
 	var ref = new Firebase('https://jhollaapp.firebaseio.com/')
 	var sync = $firebase(ref.child("posts"));
 	

@@ -1,7 +1,12 @@
 app.controller('loginCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
+
+
 	$scope.openPage = true;
 	$scope.signUp = false;
 	$scope.login = true;
+	$scope.loginDiv = true;
+	$scope.topDiv= false;
+
 	
 
 	$scope.Register = function(){
@@ -37,6 +42,7 @@ var ref = new Firebase('https://jhollaapp.firebaseio.com/'); // url for firebase
 			var uid = user.uid; 
 			var userInfo = {
 				userId: uid,
+				userRole: 1, 
 				date: Firebase.ServerValue.TIMESTAMP,
 				userEmail: $scope.user1.email,
 
@@ -58,18 +64,21 @@ var ref = new Firebase('https://jhollaapp.firebaseio.com/'); // url for firebase
 		.then(function(user){
 			$scope.login= false; 
 			$scope.openPage = false;
-			$scope.firstBtn = true;
-			$scope.secondBtn = true; 
+			$scope.secondBtn = true;
+			$scope.topDiv = true;
+			$scope.loginDiv = false; 
 			remember: "sessionOnly"
 			console.log("Authentication of " + user.uid + " successful");
 			var userId = user.uid;
 			$scope.userId = userId;
 
 
+
 			}, function(error){
 			console.log('Authentication failure');
 		})
 	};
+
 
 });
 
