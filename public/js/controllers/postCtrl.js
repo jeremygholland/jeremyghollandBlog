@@ -1,28 +1,28 @@
+var app = angular.module('myApp');
 
-	myApp.controller('postCrtl', ['$scope', '$http', function($scope, $routeParams, $http){
+
+	app.controller('postCtrl', ['$scope', '$http','$routeParams', 'posts', function($scope, $http, $routeParams, posts){
 		
 		$scope.params = $routeParams;
-	
-		var Posts ={
-			get : function(http) {
-				return $http.get('/api/posts');
-			},
-			create : function(http, postData) {
-				return $http.post('/api/posts', postData);
-			}
-		}
 
 
 	$scope.addPost = function(){
-		if ($scope.title != undefined) {
-				Posts.create($scope.title)
+		postData ={
+			title: $scope.name1,
+			body: $scope.postText,
+			author: $scope.user}
+			 posts.create(postData)
 				.success(function(data) {
+					postData = data;
+					console.log(data.name1);
+					console.log(data.id);
+					console.log(data.postText);
+					console.log(data.user);
 			alert("the shit made it");
 		})
 		.error(function(data){
 			console.log('error: your shit did not work');
 			})
 		};
-	}
 
 }]);

@@ -1,7 +1,12 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('Post', {
-	title: {type : String, default: ''},
-	body: {type: String, default: ''},
-	author {type: String, default: ''}
+var Schema = mongoose.Schema;
+
+var postSchema = new Schema ({
+	title: {type: String},
+	body: {type: String},
+	author: {type: String}
+
 });
+
+module.exports = db.model('Post', postSchema);

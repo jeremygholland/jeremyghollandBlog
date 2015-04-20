@@ -1,4 +1,4 @@
-myApp.controller('singleCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
+app.controller('singleCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
 
 	
 $scope.loginDiv = false;

@@ -1,4 +1,4 @@
-var Post = require('./models/user');
+var Post = require('./models/post');
 
 function getPosts(res){
 	Post.find(function(err, posts) {
@@ -26,8 +26,9 @@ module.exports = function(app) {
 
 		// create a todo, information comes from AJAX request from Angular
 		Post.create({
-			text : req.body.text,
-			done : false
+			title : req.body.text,
+			body: req.body.text,
+			author: req.body.text
 		}, function(err, post) {
 			if (err)
 				res.send(err);
@@ -40,8 +41,5 @@ module.exports = function(app) {
 
 	// delete a todo
 
-	// application -------------------------------------------------------------
-	app.get('*', function(req, res) {
-		res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
-	});
+	// application ------------------------------------------------------------
 };

@@ -1,8 +1,8 @@
-var myApp = angular.module('myApp', ['firebase','textAngular', 'ngRoute']);
+var app = angular.module('myApp', ['firebase','textAngular', 'ngRoute']);
 
 
 
-myApp.config (function($routeProvider){
+app.config (function($routeProvider){
 	$routeProvider.when('/blogEntries', {
 		templateUrl: 'views/blogEntries.html',
 		controller: 'entriesCtrl'
@@ -17,7 +17,7 @@ myApp.config (function($routeProvider){
 	});
 	$routeProvider.when('/addPost', {
 		templateUrl: 'views/addPost.html',
-		controller: 'postCrtl'
+		controller: 'postCtrl'
 	});
 	$routeProvider.otherwise({
 		redirectTo: '/'

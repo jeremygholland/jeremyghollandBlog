@@ -1,14 +1,18 @@
-myApp.controller('entriesCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin){
+app.controller('entriesCtrl', ['$scope', '$http','$routeParams', 'posts', function($scope, $http, $routeParams, posts){
 
 
 $scope.loginDiv = false;
 	$scope.topDiv= true;
 		$scope.params = $routeParams;
-	var ref = new Firebase('https://jhollaapp.firebaseio.com/')
-	var sync = $firebase(ref.child("posts"));
+
 	
-	$scope.onlinePostes = sync.$asArray();
-	$scope.numLimit = 500;
+		posts.get()
+		.success(function(data) {
+				$scope.onlinePostes = data;
+				alert("yeah this is working");
+			});
+
+
 	$scope.hover= function(onlinePoste){
 		$scope.hoverTrue = true;
 	}
@@ -16,4 +20,4 @@ $scope.loginDiv = false;
 		$scope.hoverTrue = false;
 	}
 	$scope.hoverTrue= false;
-});
+}]);

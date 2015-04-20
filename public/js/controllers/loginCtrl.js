@@ -1,4 +1,4 @@
-myApp.controller('loginCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin, $location){
+app.controller('loginCtrl', function($scope, $routeParams, $firebase, $firebaseSimpleLogin, $location){
 $location.path("/")
 
 	$scope.openPage = true;
