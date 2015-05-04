@@ -5,10 +5,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Untitled</title>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
         <link rel="author" href="humans.txt">
+        <link rel="stylesheet" type="text/css" href="css/textStyling.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.2.3/rangy-core.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular-sanitize.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular.min.js'></script>
     </head>
     <body ng-controller = "mainCtrl">
     	<div ui-view></div>
@@ -21,7 +25,7 @@
         <script type = "text/ng-template" id ="/home.html">
         <div ng-repeat = "post in posts">
             <a href="#/posts/{{post._id}}"> <h1>{{post.title}}</h1></a>
-            <p>{{post.body}}</p>
+            <p ta-bind ng-model = "post.body"></p>
             <p>{{post.author}}</p>
 
         </div>
@@ -34,19 +38,23 @@
         <script type = "text/ng-template" id ="/post.html">
         <div>
             <h1> {{posts.title}}</h1>
-            <p>{{posts.body}}</p>
+            <p ta-bind ng-model = "posts.body"></p>
             <p>{{posts.author}}</p>
         </div>
+
+        <div> 
+            <a ui-sref="home"> <button> go back home</button></a>
+        </div> 
         </script>
 
         <script type = "text/ng-template" id ="/addPost.html">
         <div>
             <input type="text" placeholder = "title" ng-model = "title">
-            <input type="text" placeholder= "what's on your mind" ng-model= "body">
+            <div text-angular ng-model="body"  class = "textarea"> </div>
             <input type="text" placeholder="author" ng-model = "author">
             <a ui-sref="home"><button ng-click = "addPost()">submit</button></a>
         </div>
         </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
     </body>
 </html>
