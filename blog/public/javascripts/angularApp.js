@@ -20,10 +20,10 @@ app.config([
 				url: '/posts/{id}', 
 				templateUrl: '/post.html',
 				resolve: {
-   					 post: ['$stateParams', 'posts', function($stateParams, posts) {
-     				 return posts.get($stateParams.id);
-    			}]
-  				}
+				post: ['$stateParams', 'posts', function($stateParams, posts) {
+      			return posts.get($stateParams.id);
+    		}]
+  			}
 
 			})
 			.state('addPost', {
@@ -36,7 +36,7 @@ app.config([
 	}]);
 
 
-app.factory('posts', ['$http',function($http){
+app.factory('posts', ['$http', function($http){
 	var o = {
 		posts: []
 	};
@@ -51,7 +51,7 @@ app.factory('posts', ['$http',function($http){
 		});
 	};
 		o.get = function(id) {
-  			return $http.get('/blogPost/' + id).then(function(res){
+  			return $http.get('/blogPosts/' + id).then(function(res){
     		return res.data;
   			});
 		};
@@ -87,6 +87,7 @@ app.controller('PostsCtrl', [
   'posts',
   'post',
   function($scope, posts, post){
-   
+   $scope.posts = post;
+   console.log($scope.posts.title);
  
-     }])
+     }]);
