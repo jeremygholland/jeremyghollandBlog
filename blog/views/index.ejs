@@ -15,8 +15,13 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular.min.js'></script>
     </head>
     <body ng-controller = "mainCtrl">
-    	<div ui-view></div>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-center">
+       	        <div ui-view></div>
+                </div>
+           </div>
+        </div>
 
 
         <script src="/javascripts/angularApp.js"></script>
@@ -45,6 +50,23 @@
         <div> 
             <a ui-sref="home"> <button> go back home</button></a>
         </div> 
+            
+    <h1> Comments </h1>
+
+        <div ng-repeat = "comment in posts.comments">    
+            <p>{{comment.body}} </p>
+                <br>
+                <p>{{comment.author}}</p>
+        </div>
+
+        <div>
+            <h1> Add comment</h1>
+            <input type="text" placeholder = "What do you think?" ng-model = "body">
+            <br>
+            <input type="text" placeholder = "who are you?" ng-model = "author">
+            <button ng-click = "addComment()"> submit</button>
+
+        </div>
         </script>
 
         <script type = "text/ng-template" id ="/addPost.html">

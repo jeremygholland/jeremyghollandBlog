@@ -55,7 +55,9 @@ app.factory('posts', ['$http', function($http){
     		return res.data;
   			});
 		};
-
+		  o.addComment = function(id, comment) {
+  return $http.post('/blogPosts/' + id + '/comments', comment);
+}
 	return o;
 
 }])
@@ -88,6 +90,19 @@ app.controller('PostsCtrl', [
   'post',
   function($scope, posts, post){
    $scope.posts = post;
-   console.log($scope.posts.title);
+   console.log(post);
+   $scope.posts.comments = $scope.posts.comments.concat(posts.comments);
+
+   $scope.addComment = function(){
+  if($scope.body === '') { return; }
+  posts.addComment(post._id, {
+    body: $scope.body,
+    author: $scope.author,
+  }).success(function(comment) {
+    $scope.posts.comments.push(comment);
+  });
+  $scope.body = '';
+  $scope.author = '';
+};
  
      }]);

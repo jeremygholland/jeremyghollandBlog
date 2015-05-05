@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
 require('./models/Posts');
+require('./models/comments');
 
 mongoose.connect('mongodb://localhost/blogPosts');
 
