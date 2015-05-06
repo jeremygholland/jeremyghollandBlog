@@ -129,6 +129,12 @@ auth.register = function(user){
   });
 };
 
+auth.logIn = function(user){
+  return $http.post('/login', user).success(function(data){
+    auth.saveToken(data.token);
+  });
+};
+
 auth.logOut = function(){
   $window.localStorage.removeItem('blog-token');
 };
@@ -198,8 +204,8 @@ app.controller('AuthCtrl', [
 				$state.go('home');
 			});
 		};
-		$scope.login = function(){
-			auth.login($scope.user).error(function(error){
+		$scope.logIn = function(){
+			auth.logIn($scope.user).error(function(error){
 				$scope.error = error;
 			}).then(function(){
 				$state.go('home');
