@@ -30,13 +30,33 @@ app.config([
 				controller: 'mainCtrl',
 				url:'/addPost',
 				templateUrl: '/addPost.html',
-			});
+			})
+			.state('login', {
+				url: '/login',
+				templateUrl: '/login.html',
+				controller: 'AuthCtrl',
+				onEnter: ['$state', 'auth', function($state, auth){
+					if( auth.isLoggedIn()){
+						$state.go('home');
+					}
+				}]
+			})
+			.state('register', {
+				url: '/register',
+				templateUrl: '/register.html',
+				controller: 'AuthCtrl',
+				onEnter: ['$state', 'auth', function($state, auth){
+					if(auth.isLoggedIn()){
+						$state.go('home');
+					}
+				}]
+			})
 			$urlRouterProvider.otherwise('home');
 
 	}]);
 
 
-app.factory('posts', ['$http', function($http){
+app.factory('posts', ['$http', 'auth', function($http, auth){
 	var o = {
 		posts: []
 	};
@@ -46,7 +66,9 @@ app.factory('posts', ['$http', function($http){
    		 });
   };
 	o.create = function(post){
-		return $http.post('/blogPosts', post).success(function(data){
+		return $http.post('/blogPosts', post, {
+			headers: {Authorization: 'Bearer ' +auth.getToken()}
+		}).success(function(data){
 			o.posts.push(data);
 		});
 	};
@@ -61,16 +83,63 @@ app.factory('posts', ['$http', function($http){
 			});
 		};
 		  o.addComment = function(id, comment) {
-  return $http.post('/blogPosts/' + id + '/comments', comment);
-  console.log(comment);
+  return $http.post('/blogPosts/' + id + '/comments', comment, {
+  	headers: {Authorization: 'Bearer ' +auth.getToken()}
+  });
 }
 	return o;
 
 }])
 
+app.factory('auth', ['$http', '$window', function($http, $window){
+	var auth = {};
 
-app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts){
+	auth.saveToken = function(token){
+		$window.localStorage['blog-token'] = token;
+	};
+
+	auth.getToken = function(){
+		return $window.localStorage['blog-token'];
+	}
+
+	auth.isLoggedIn = function(){
+  var token = auth.getToken();
+
+  if(token){
+    var payload = JSON.parse($window.atob(token.split('.')[1]));
+
+    return payload.exp > Date.now() / 1000;
+  } else {
+    return false;
+  }
+};
+
+auth.currentUser = function(){
+  if(auth.isLoggedIn()){
+    var token = auth.getToken();
+    var payload = JSON.parse($window.atob(token.split('.')[1]));
+
+    return payload.username;
+  }
+};
+
+auth.register = function(user){
+  return $http.post('/register', user).success(function(data){
+    auth.saveToken(data.token);
+  });
+};
+
+auth.logOut = function(){
+  $window.localStorage.removeItem('blog-token');
+};
+
+	return auth;
+}])
+
+
+app.controller('mainCtrl', ['$scope', 'auth', 'posts', function($scope, auth, posts){
 	$scope.test = "this works.";
+	$scope.isLoggedIn = auth.isLoggedIn;
 
 	$scope.posts = [];
 	$scope.posts = $scope.posts.concat(posts.posts);
@@ -92,11 +161,12 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts){
 
 app.controller('PostsCtrl', [
   '$scope',
+  'auth',
   'posts',
   'post',
-  function($scope, posts, post){
+  function($scope, auth, posts, post){
+  	$scope.isLoggedIn = auth.isLoggedIn;
    $scope.posts = post;
-   console.log(post);
 
    $scope.addComment = function(){
   if($scope.body === '') { return; }
@@ -105,10 +175,43 @@ app.controller('PostsCtrl', [
     author: $scope.author,
   }).success(function(comment) {
     $scope.posts.comments.push(comment);
-    console.log(comment);
   });
   $scope.body = '';
   $scope.author = '';
 };
  
      }]);
+
+
+
+app.controller('AuthCtrl', [
+	'$scope',
+	'$state',
+	'auth',
+	function($scope, $state, auth){
+		$scope.user = {};
+
+		$scope.register = function(){
+			auth.register($scope.user).error(function(error){
+				$scope.error = error;
+			}).then(function(){
+				$state.go('home');
+			});
+		};
+		$scope.login = function(){
+			auth.login($scope.user).error(function(error){
+				$scope.error = error;
+			}).then(function(){
+				$state.go('home');
+			});
+		};
+	}])
+
+app.controller('NavCtrl', [
+	'$scope',
+	'auth',
+	function($scope, auth){
+		$scope.isLoggedIn = auth.isLoggedIn;
+		$scope.currentUser = auth.currentUser;
+		$scope.logOut = auth.logOut;
+	}]);

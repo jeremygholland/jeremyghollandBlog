@@ -9,9 +9,13 @@ var app = express();
 var mongoose = require('mongoose');
 require('./models/comments');
 require('./models/Posts');
+require('./models/user');
+require('./config/passport');
 
 
 mongoose.connect('mongodb://localhost/blogPosts');
+
+var passport = require('passport');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -28,6 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 app.use('/', routes,  function(req, res){
   res.render('index.ejs');
