@@ -21,11 +21,11 @@ app.config([
 				templateUrl: '/post.html',
 				resolve: {
 				post: ['$stateParams', 'posts', function($stateParams, posts) {
-      			return posts.get($stateParams.id);
-    		}]
-  			}
+      return posts.get($stateParams.id);
+   				 }]
+   				}
+ 				 })
 
-			})
 			.state('addPost', {
 				controller: 'mainCtrl',
 				url:'/addPost',
@@ -55,8 +55,14 @@ app.factory('posts', ['$http', function($http){
     		return res.data;
   			});
 		};
+		o.getComments = function(id){
+			return $http.get('/blogPosts/' + id + '/comments').then(function(res){
+				return res.data;
+			});
+		};
 		  o.addComment = function(id, comment) {
   return $http.post('/blogPosts/' + id + '/comments', comment);
+  console.log(comment);
 }
 	return o;
 
@@ -91,15 +97,15 @@ app.controller('PostsCtrl', [
   function($scope, posts, post){
    $scope.posts = post;
    console.log(post);
-   $scope.posts.comments = $scope.posts.comments.concat(posts.comments);
 
    $scope.addComment = function(){
   if($scope.body === '') { return; }
-  posts.addComment(post._id, {
+  posts.addComment( post._id, {
     body: $scope.body,
     author: $scope.author,
   }).success(function(comment) {
     $scope.posts.comments.push(comment);
+    console.log(comment);
   });
   $scope.body = '';
   $scope.author = '';

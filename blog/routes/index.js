@@ -39,7 +39,11 @@ router.param('post', function(req, res, next, id){
 
 
 router.get('/blogPosts/:post', function(req, res){
-	res.json(req.post);
+	req.post.populate('comments', function(err, post){
+		if (err) {return next(err); }
+
+		res.json(post);
+	});
 });
 
 router.param('comment', function(req, res, next, id) {
@@ -71,13 +75,6 @@ router.post('/blogPosts/:post/comments', function(req, res, next) {
   });
 });
 
-router.get('/blogPosts/:post', function(req, res, next) {
-  req.post.populate('comments', function(err, post) {
-    if (err) { return next(err); }
-
-    res.json(post);
-  });
-});
 
 
 module.exports = router;
