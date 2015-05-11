@@ -62,10 +62,10 @@
                 <div class = "col 12">
 
       <div ng-repeat = "post in posts">
-            <div class = " card-panel teal lighten-4 postsTotal z-depth-3"><a href="#/posts/{{post._id}}"> <h1>{{post.title}}</h1></a>
+            <div class = " card-panel indigo lighten-2 postsTotal z-depth-3"><a href="#/posts/{{post._id}}" class = "titleLink"> <h1>{{post.title}}</h1></a>
             <p ta-bind ng-model = "post.body" class= "postsBody"></p>
             
-            <p>{{post.author}}</p>
+            <p class = "authorPosts"> Posted by {{post.author}}</p>
             </div>
         </div>
 
@@ -79,9 +79,9 @@
 
         <script type = "text/ng-template" id ="/post.html">
          <div class="card-panel indigo lighten-2 z-depth-3">
-            <h3> {{posts.title}}</h3>
-            <p ta-bind ng-model = "posts.body"></p>
-            <p> <i> posted by <span id = "authorName">{{posts.author}} </span> <i></p>
+            <h3 class= "center-align postTitle"> {{posts.title}}</h3>
+            <p ta-bind ng-model= "posts.body" class = "postInfo"></p>
+            <p id = "changeColor"> <i> posted by <span id = "authorName">{{posts.author}} </span> <i></p>
         </div>
 
 
@@ -100,7 +100,7 @@
             <input type="text" placeholder = "What do you think?" ng-model = "body">
             <br>
             <input type="text" placeholder = "who are you?" ng-model = "author">
-            <button ng-click = "addComment()" class = "homeBtn waves-effect waves-light btn-large"> submit</button> 
+            <button ng-click = "addComment()" class = "homeBtn waves-effect waves-light btn-large center-align"> submit</button> 
 
         </div>
         </script>
@@ -112,7 +112,8 @@
             <a ui-sref="home" class = "waves-effect waves-light btn-large" ng-click = "addPost()">submit</a>
         </div>
         </script>
-        <script type="text/ng-template" id="/register.html">
+
+    <script type="text/ng-template" id="/register.html">
   <div class="page-header">
     <h1>Jholla Blog</h1>
   </div>
@@ -139,6 +140,8 @@
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
+  </script>
+
   <script type="text/ng-template" id="/login.html">
   <div class="page-header">
     <h1>Jholla Blog</h1>
