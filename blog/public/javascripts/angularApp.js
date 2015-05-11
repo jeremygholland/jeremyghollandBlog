@@ -21,7 +21,7 @@ app.config([
 				templateUrl: '/post.html',
 				resolve: {
 				post: ['$stateParams', 'posts', function($stateParams, posts) {
-      return posts.get($stateParams.id);
+      			return posts.get($stateParams.id);
    				 }]
    				}
  				 })
@@ -77,16 +77,11 @@ app.factory('posts', ['$http', 'auth', function($http, auth){
     		return res.data;
   			});
 		};
-		o.getComments = function(id){
-			return $http.get('/blogPosts/' + id + '/comments').then(function(res){
-				return res.data;
-			});
-		};
-		  o.addComment = function(id, comment) {
+		 o.addComment = function(id, comment) {
   return $http.post('/blogPosts/' + id + '/comments', comment, {
-  	headers: {Authorization: 'Bearer ' +auth.getToken()}
+    headers: {Authorization: 'Bearer '+auth.getToken()}
   });
-}
+};
 	return o;
 
 }])
@@ -126,12 +121,14 @@ auth.currentUser = function(){
 auth.register = function(user){
   return $http.post('/register', user).success(function(data){
     auth.saveToken(data.token);
+    console.log(user);
   });
 };
 
 auth.logIn = function(user){
   return $http.post('/login', user).success(function(data){
     auth.saveToken(data.token);
+    console.log(user);
   });
 };
 

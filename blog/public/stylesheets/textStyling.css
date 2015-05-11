@@ -11,6 +11,14 @@
 	overflow: hidden;
 }
 
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
 /* add generic styling for the editor */
 .ta-root.focussed > .ta-scroll-window.form-control {
 	border-color: #66afe9;

@@ -6,3 +6,61 @@ body {
 a {
   color: #00B7FF;
 }
+
+.homeBtn {margin-left: 20vw}
+
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+ }
+.comments{
+	margin-top: 5vh;
+}
+
+#authorName{
+	font-size: 1.5em;
+}
+.addPost{
+	margin-left: 23vw;
+	width: 15vw;
+	margin-top: 10vh;
+		}
+.postsTotal{
+	max-height: 60vh;
+	overflow:hidden;
+}
+
+.postsBody{overflow: hidden;
+			max-height: 30vh}
+
+.author{
+	font-size: 1.2em;
+}
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+.all{
+	background-color: #f9fbe7;
+}
+
+  main {
+    flex: 1 0 auto;
+  }
+
+ #jump{
+ 	font-size: 1.4em;
+ 	color: #6200ea;
+ }
+
+.topLogo{
+	margin-top: 1.5vh;
+	height: 6vh;
+	width: 6vh;
+}

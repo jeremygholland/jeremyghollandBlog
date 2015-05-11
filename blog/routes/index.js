@@ -67,7 +67,6 @@ router.param('comment', function(req, res, next, id) {
 router.post('/blogPosts/:post/comments', auth, function(req, res, next) {
   var comment = new Comment(req.body);
   comment.post = req.post;
-  post.author = req.payload.username;
 
   comment.save(function(err, comment){
     if(err){ return next(err); }
