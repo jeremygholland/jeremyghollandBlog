@@ -6,6 +6,8 @@ a {
   color: #00B7FF;
 }
 
+img {box-shadow: 2px 2px 2px black}
+
 .homeBtn {margin-left: 20vw}
 
 .ta-editor {
@@ -54,6 +56,7 @@ a {
 }
 .postInfo, .postTitle, #changeColor{
 	color:#f5f5f5; 
+	text-shadow: 1px 1px 1px black;
 }
 
   main {
@@ -73,6 +76,7 @@ a {
 	margin-top: 1.5vh;
 	height: 6vh;
 	width: 6vh;
+	box-shadow: 1px 1px 1px black;
 }
 
 .authorPosts{
@@ -82,4 +86,9 @@ a {
 
 .titleLink:link{
 	color: #f5f5f5;
+}
+
+::-webkit-input-placeholder{
+	font-size: 1.2em;
+	color: #009688;
 }
