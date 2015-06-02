@@ -15,6 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular-sanitize.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.0/textAngular.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
     </head>
     <body ng-controller = "mainCtrl">
       <div class="all">
@@ -39,8 +40,8 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Navigation Footer</h5>
-                <p class="grey-text text-lighten-4">As House of Pain said: <br> <span id = "jump">Jump around! </span></p>
+                <p class="grey-text text-lighten-4">As House of Pain said: </p>
+                 <p id = "jump">Jump around! </p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
@@ -69,9 +70,6 @@
             </div>
         </div>
 
-        <div>
-            <a ui-sref = "addPost"><button ng-show = "isLoggedIn()" class = "addPost waves-effect waves-light btn-large"><p>Add post?</p></button></a>
-        </div>
 
   </div>
 
@@ -100,7 +98,7 @@
             <input type="text" placeholder = "What do you think?" ng-model = "body">
             <br>
             <input type="text" placeholder = "who are you?" ng-model = "author">
-            <button ng-click = "addComment()" class = "homeBtn waves-effect waves-light btn-large center-align"> submit</button> 
+            <a ng-click = "addComment()" class = "homeBtn waves-effect waves-light btn-large center-align" ng-show = "body.length>0 && author.length>0"> submit</a> 
 
         </div>
         </script>
@@ -109,7 +107,7 @@
        <div class = "col 12">
             <input type="text" placeholder = "title" ng-model = "title">
             <div text-angular ng-model="body"  class = "textarea textHeight"> </div>
-            <a ui-sref="home" class = "waves-effect waves-light btn-large" ng-click = "addPost()">submit</a>
+            <a ui-sref="home" class = "waves-effect waves-light btn" ng-click = "addPost()">submit</a>
         </div>
         </script>
 
@@ -172,5 +170,6 @@
   </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     </body>
 </html>
