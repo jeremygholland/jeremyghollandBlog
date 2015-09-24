@@ -147,7 +147,7 @@ app.controller('mainCtrl', ['$scope', 'auth', 'posts', function($scope, auth, po
 	$scope.posts = [];
 	$scope.posts = $scope.posts.concat(posts.posts);
 	$scope.addPost = function(){
-		if((!$scope.title == '') && (!$scope.body == '')){
+		if(!($scope.title == '') && !($scope.body == '') && !($scope.author == '')){
 		posts.create({
 			title: $scope.title,
 			body: $scope.body,
