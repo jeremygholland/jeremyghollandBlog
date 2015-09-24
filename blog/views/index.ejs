@@ -23,7 +23,7 @@
         <nav>
 <div class="navbar-wrapper z-depth-3 valign-wrapper" ng-controller="NavCtrl">
   <a ui-sref = "home" class="brand-logo center"><img src="images/logo.jpg" class = "topLogo valign"></a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
+    <ul id="nav-mobile" class="left hide-on-med-and-down topSwitch">
       <li ng-show="()"isLoggedIn><a class = "waves-effect waves-grey-lighten-5 btn-flat"><p>{{ currentUser() }} </p></a></li>
       <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()" class = "waves-effect waves-grey-lighten-5 btn-flat"><p>Log Out </p></a></li>
       <li ng-hide="isLoggedIn()"><a href="/#/login" class = "waves-effect waves-grey-lighten-5 btn-flat"><p> Log In </p></a></li>

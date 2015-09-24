@@ -1,7 +1,9 @@
 body {
   padding: 50px;
 }
-
+nav{
+	color: white;
+}
 a {
   color: #00B7FF;
 }
